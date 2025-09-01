@@ -3,7 +3,7 @@
 A production‑grade gateway that:
 
 - Converts **SOAP WSDL services** into a **REST‑style interface**.
-- Runs **FastAPI HTTP API** and **MCP server** as **separate processes** in the same container via `supervisord`.
+- Runs **FastAPI HTTP API** and **MCP server** as **separate processes** in the different containers.
 - Supports **WS‑Security UsernameToken** authentication from `.env`.
 - Caches **raw WSDL XML** and **fully processed WSDL** (Zeep client, docs, examples).
 - Allows **manual cache clear** and **manual processed WSDL refresh** via HTTP or MCP.
