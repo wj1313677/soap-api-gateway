@@ -1,0 +1,24 @@
+services:
+  gateway:
+    build: .
+    container_name: soap_rest_gateway
+    command: uvicorn fastapi_app:app --host 0.0.0.0 --port 9000 --reload
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=true
+
+  mcp:
+    build: .
+    container_name: soap_rest_mcp
+    command: uvicorn mcp_server:app --host 0.0.0.0 --port 9010 --reload
+    ports:
+      - "9010:9010"
+    volumes:
+      - .:/app
+    depends_on:
+      - gateway
+    environment:
+      - DEBUG=true

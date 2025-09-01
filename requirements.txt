@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+zeep
+lxml
+requests
+mcp[fastmcp]
+python-dotenv
+fastapi-mcp
